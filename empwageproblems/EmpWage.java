@@ -3,18 +3,18 @@ package empwageproblems;
 public class EmpWage {
 	public static void main(String[] args) {
 		int is_FULL = 1;
+		int is_PART = 2;
 		int empRatePerHr = 20;
-		int empWorkingHr = 8;
-		double empCheck = Math.floor(Math.random() * 10) % 2;
-		if(empCheck == is_FULL) {
-			System.out.println("Employee is present");
-		    int salary = empRatePerHr * empWorkingHr;
-		    System.out.println("Salary is :" +salary);
-		}
-		    else
-		    {
-		    	System.out.println("Employee is absent");
-		        System.out.println("Salary is 0");
-		    }    
-		}
+		int empWorkingHr;
+		double empCheck = Math.floor(Math.random() * 10) % 3;
+	    if(empCheck == is_FULL) 
+			empWorkingHr = 8; 
+		else if(empCheck == is_PART)
+		    empWorkingHr = 4;
+		 else
+		    empWorkingHr = 0;
+	    int salary = empRatePerHr * empWorkingHr;   
+	    System.out.println("Salary is :" + salary);	
 	}
+
+}
