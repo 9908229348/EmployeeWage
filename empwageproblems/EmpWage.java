@@ -2,12 +2,15 @@ package empwageproblems;
 
 public class EmpWage {
 	public static void main(String[] args) {
-		  int totalSalary = 0;
+		  int totalSalary;
 		  int empRatePerHr = 20;
-		  int empWorkingDays = 20;
-		  int empHr,salary;
-		  int day;
-		  for(day = 1;day <= empWorkingDays;day++) {
+		  int no_of_WorkingDays = 20;
+		  int totalWorkingDays = 0;
+		  int max_Hr_In_Month = 100;
+		  int empHr,totalEmpHrs = 0;
+		  while(totalEmpHrs < max_Hr_In_Month && totalWorkingDays < no_of_WorkingDays)
+		  {
+			  totalWorkingDays++;
 			  double empCheck = Math.floor(Math.random() * 10) % 3;
 			  int i = (int)empCheck;
 			  switch(i) {
@@ -19,12 +22,10 @@ public class EmpWage {
 				  break;
 			 default:
 				 empHr = 0;
-			  }
-			 salary = empRatePerHr * empHr;
-			 System.out.println("Salary for day" + day + " is :" + salary);
-			 totalSalary = totalSalary + salary;
-			 System.out.println("Total salary is :"+ totalSalary);
-					 
-			}
-		}
+			                 }
+	   totalEmpHrs = totalEmpHrs + empHr;
+		  }
+			 totalSalary = empRatePerHr * totalEmpHrs;
+			 System.out.println(" total Salary is:" + totalSalary);
+}
 }
